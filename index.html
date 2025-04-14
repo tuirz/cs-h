@@ -3,55 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C.S.Habarcq</title>
+    <title>CS Habarcq | Club de Football du Pas-de-Calais</title>
 
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Site officiel du CS Habarcq - Club de football du Pas-de-Calais. Actualités, calendrier des matchs, résultats et vie du club.">
+    <meta name="keywords" content="CS Habarcq, football, Pas-de-Calais, club sportif, équipe football, matchs">
     <meta name="author" content="Luigi SOUFAR">
-    <meta name="description" content="Bienvenue sur le projet de site du club C.S.HABARCQ. Retrouvez toute l'actualité, le calendrier et les résultats des équipes, ainsi que toute la vie du club.">
-    <meta name="keywords" content="SEO, SIMPLON, classement, équipe, sport, site officiel, dirigeant de club, joueur, terrain, entraîneur, calendrier, résultat, championnat, coupe, score, entraînement, supporter">
-    
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CS Habarcq | Club de Football">
+    <meta property="og:description" content="Site officiel du CS Habarcq - Club de football du Pas-de-Calais">
+    <meta property="og:image" content="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png">
+    <meta property="og:type" content="website">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     
-
     <link rel="icon" type="image/png" href="favicon.png">
-    
-    <meta property="og:title" content="C.S.Habarcq">
-    <meta property="og:description" content="Bienvenue sur le projet de site du club C.S.HABARCQ. Retrouvez toute l'actualité, le calendrier et les résultats des équipes, ainsi que toute la vie du club.">
-    <meta property="og:image" content="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png">
 </head>
 <body>
     <header>
-        <div class="menu-container">
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="burger-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav class="menu-dropdown">
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#equipe">Nos Équipes</a></li>
-                    <li><a href="#calendrier">Calendrier</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="logo-container">
-            <img src="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png" alt="Logo C.S.Habarcq" class="logo">
-        </div>
-        <div class="info-btn">
-            <button aria-label="Informations">i</button>
+        <div class="container">
+            <!-- New Menu Button Structure -->
+            <div id="menu-btn-container">
+                <div id="menu-btn">
+                    <input type="checkbox" id="menu-checkbox">
+                    <label for="menu-checkbox" id="menu-label">
+                        <span id="menu-bar"></span>
+                    </label>
+                </div>
+                <!-- Navigation Menu -->
+                <nav class="menu-dropdown" aria-label="Menu principal">
+                    <ul class="menu-list">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#equipes">Équipes</a></li>
+                        <li><a href="#calendrier">Calendrier</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="/" aria-label="Accueil CS Habarcq">
+                    <img src="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png" 
+                         alt="Logo CS Habarcq" 
+                         class="logo"
+                         width="60"
+                         height="60">
+                </a>
+            </div>
         </div>
     </header>
+
     <main>
-        <p>Ceci est une page HTML avec une approche mobile-first.</p>
+        <div class="container">
+            <h1>CS Habarcq</h1>
+            <section id="actualites">
+                <h2>Actualités du club</h2>
+                <!-- Content here -->
+            </section>
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2025 Réalisé par Luigi SOUFAR pour SIMPLON DEV Inté P3 Lens</p>
+        <div class="container">
+            <p>&copy; 2025 CS Habarcq - Tous droits réservés</p>
+        </div>
     </footer>
 </body>
 </html>
