@@ -257,65 +257,10 @@ header {
     transition: all var(--transition);
 }
 
-#menu-checkbox:checked ~ #main-container {
-    filter: blur(var(--blur-strength));
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-/* Overlay pour fermer le menu */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--overlay-color);
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    z-index: 998;
-    backdrop-filter: blur(var(--blur-strength));
-    -webkit-backdrop-filter: blur(var(--blur-strength));
-    cursor: pointer;
-}
-
-/* Afficher l'overlay quand le menu est ouvert */
-#menu-checkbox:checked ~ .menu-overlay {
-    opacity: 1;
-    visibility: visible;
-}
-
 /* Ajuster les z-index */
-.menu-overlay { z-index: 998; }
 .menu-dropdown { z-index: 1001; }
 #menu-btn-container { z-index: 1002; }
-
-/* Label de l'overlay pour fermer le menu */
-.menu-overlay:hover ~ #menu-btn-container #menu-checkbox {
-    opacity: 0;
-}
-
-.menu-overlay:active ~ #menu-btn-container #menu-checkbox {
-    opacity: 0;
-    checked: false;
-}
-
-/* S'assurer que le menu reste au-dessus de l'overlay */
-#menu-btn-container {
-    z-index: 1002;
-}
-
-/* Label de l'overlay pour capter les clics */
-.menu-overlay {
-    cursor: pointer;
-}
-
-/* Empêcher la propagation des clics dans le menu */
-.menu-dropdown {
-    position: relative;
-    z-index: 1001;
-}
+header { z-index: 999; }
 
 /* Logo */
 .logo-container {
@@ -347,27 +292,6 @@ main {
     padding: var(--spacing);
     flex: 1;
     height: 1000px;
-}
-
-/* Overlay sombre */
-#main-container::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--overlay-color);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition), visibility var(--transition);
-    pointer-events: none;
-    z-index: 999;
-}
-
-#menu-checkbox:checked ~ #main-container::after {
-    opacity: 1;
-    visibility: visible;
 }
 
 /* Footer */
