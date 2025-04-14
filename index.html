@@ -25,60 +25,69 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    
-    <header>
-        <div class="container">
-            <!-- Theme Switch -->
-            <div class="theme-switch">
-                <input type="checkbox" id="theme-toggle">
-                <label for="theme-toggle" class="theme-label">
-                    <span class="theme-icon"></span>
-                </label>
-            </div>
-            
-            <!-- Menu Button -->
-            <div id="menu-btn-container">
-                <input type="checkbox" id="menu-checkbox">
-                <label for="menu-checkbox" id="menu-label">
-                    <span id="menu-bar"></span>
-                </label>
-                <nav class="menu-dropdown">
-                    <ul class="menu-list">
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#equipes">Équipes</a></li>
-                        <li><a href="#calendrier">Calendrier</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            
-            <!-- Logo -->
-            <div class="logo-container">
-                <a href="/" class="logo-link">
-                    <img src="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png" 
-                         alt="Logo CS Habarcq" 
-                         class="logo"
-                         width="60"
-                         height="60">
-                </a>
-            </div>
-        </div>
-    </header>
+    <!-- Video Intro -->
+    <div class="video-intro">
+        <video id="intro-video" autoplay muted onended="this.parentElement.classList.add('ended')">
+            <source src="videos/intro.mp4" type="video/mp4">
+        </video>
+    </div>
 
-    <div id="main-container">
-        <main>
+    <!-- Site Content -->
+    <div class="site-content hidden">
+        <header>
             <div class="container">
-                <h1>l</h1>
-                <section id="actualites">
-                    <h2>l</h2>
-                    <!-- Content here -->
-                </section>
+                <!-- Theme Switch -->
+                <div class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <label for="theme-toggle" class="theme-label">
+                        <span class="theme-icon"></span>
+                    </label>
+                </div>
+                
+                <!-- Menu Button -->
+                <div id="menu-btn-container">
+                    <input type="checkbox" id="menu-checkbox">
+                    <label for="menu-checkbox" id="menu-label">
+                        <span id="menu-bar"></span>
+                    </label>
+                    <nav class="menu-dropdown">
+                        <ul class="menu-list">
+                            <li><a href="#accueil">Accueil</a></li>
+                            <li><a href="#equipes">Équipes</a></li>
+                            <li><a href="#calendrier">Calendrier</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="/" class="logo-link">
+                        <img src="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png" 
+                             alt="Logo CS Habarcq" 
+                             class="logo"
+                             width="60"
+                             height="60">
+                    </a>
+                </div>
             </div>
-        </main>
+        </header>
 
-        <footer>
-            <p>&copy; 2025 C.S.Habarcq - Réalisé par Luigi SOUFAR pour SIMPLON DEV Inté P3 Lens</p>
-        </footer>
+        <div id="main-container">
+            <main>
+                <div class="container">
+                    <h1>l</h1>
+                    <section id="actualites">
+                        <h2>l</h2>
+                        <!-- Content here -->
+                    </section>
+                </div>
+            </main>
+
+            <footer>
+                <p>&copy; 2025 C.S.Habarcq - Réalisé par Luigi SOUFAR pour SIMPLON DEV Inté P3 Lens</p>
+            </footer>
+        </div>
     </div>
 </body>
 </html>
