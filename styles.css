@@ -1,21 +1,70 @@
 /* Variables */
 :root {
-    /* Colors */
-    --primary-color: #1a472a;     /* Dark green */
-    --secondary-color: #2d5a3c;   /* Medium green */
-    --accent-color: #83bf4f;      /* Light green */
-    --background-color: #ffffff;
-    --text-color: #ffffff;
-    --text-dark: #333333;
+    /* Nouvelles couleurs modernes */
+    --primary-color: #2E7D32;     /* Vert forêt */
+    --secondary-color: #388E3C;   /* Vert pelouse */
+    --accent-color: #4CAF50;      /* Vert vif */
+    --hover-color: #ffffff;       /* Vert clair pour hover */
+    --background-color: #FFFFFF;
+    --text-color: #FFFFFF;
+    --text-dark: #000000;
     
     /* Layout */
-    --header-height: 80px;
-    --menu-width: 280px;
+    --header-height: 70px;
+    --menu-width: 250px;
     --container-width: 1200px;
-    --base-spacing: 1rem;
+    --spacing: 1.5rem;
     
-    /* Transitions */
-    --transition: 0.3s ease;
+    /* Animations */
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Effets */
+    --blur-strength: 5px;
+    --overlay-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Theme Variables */
+:root {
+    /* Light theme (default) */
+    --primary-color: #15803D;         /* Vert forêt moderne */
+    --primary-gradient: linear-gradient(to right, #22C55E, #15803D, #166534);
+    --secondary-color: #16A34A;       /* Vert printemps */
+    --accent-color: #4ADE80;          /* Vert lime */
+    
+    /* Couleurs de fond */
+    --background-color: #F8FAFC;      /* Gris très clair */
+    --surface-color: #F1F5F9;         /* Gris subtil */
+    
+    /* Textes */
+    --text-color: #FFFFFF;            /* Blanc pur */
+    --text-dark: #334155;             /* Gris slate */
+    
+    /* Effets */
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --blur-strength: 100px;
+    --overlay-color: rgba(241, 245, 249, 0.7); /* Overlay assorti */
+}
+
+/* Dark theme when toggle is checked */
+:root:has(#theme-toggle:checked) {
+    /* Couleurs principales */
+    --primary-color: #064E3B;         /* Vert foncé élégant */
+    --primary-gradient: linear-gradient(to right, #064E3B, #065F46, #047857);
+    --secondary-color: #065F46;       /* Vert moyen */
+    --accent-color: #34D399;          /* Vert menthe */
+    
+    /* Couleurs de fond */
+    --background-color: #0F172A;      /* Bleu nuit */
+    --surface-color: #1E293B;         /* Bleu gris */
+    
+    /* Textes */
+    --text-color: #F8FAFC;           /* Blanc cassé */
+    --text-dark: #E2E8F0;            /* Gris clair */
+    
+    /* Effets */
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --blur-strength: 8px;
+    --overlay-color: rgba(15, 23, 42, 0.7);  /* Overlay assorti */
 }
 
 /* Reset */
@@ -33,32 +82,37 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--background-color);
+    transition: background-color var(--transition), color var(--transition);
 }
 
 .container {
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 var(--base-spacing);
+    padding: 0 var(--spacing);
 }
 
 /* Header */
 header {
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     height: var(--header-height);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 999;
+    transition: background var(--transition);
 }
 
 /* Menu Button */
 #menu-btn-container {
     position: absolute;
-    left: var(--base-spacing);
+    left: var(--spacing);
     top: 50%;
     transform: translateY(-50%);
-    z-index: 100;
+    z-index: 1002;
+    width: 30px;
+    height: 24px;
 }
 
 #menu-checkbox {
@@ -66,37 +120,40 @@ header {
 }
 
 #menu-label {
-    position: relative;
+    width: 100%;
+    height: 100%;
     display: block;
-    height: 29px;
+    position: relative;
     cursor: pointer;
-    width: 39px;
 }
 
 #menu-bar {
-    position: absolute;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background: var(--text-color);
-    transition: var(--transition);
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #menu-bar::before,
 #menu-bar::after {
     content: '';
-    position: absolute;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background: var(--text-color);
+    position: absolute;
+    left: 0;
     transition: var(--transition);
 }
 
 #menu-bar::before {
-    transform: translateY(-8px);
+    top: -8px;
 }
 
 #menu-bar::after {
-    transform: translateY(8px);
+    bottom: -8px;
 }
 
 /* Menu Animation */
@@ -105,11 +162,11 @@ header {
 }
 
 #menu-checkbox:checked ~ #menu-label #menu-bar::before {
-    transform: rotate(45deg);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 #menu-checkbox:checked ~ #menu-label #menu-bar::after {
-    transform: rotate(-45deg);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Menu Dropdown */
@@ -117,36 +174,147 @@ header {
     position: fixed;
     top: var(--header-height);
     left: -100%;
-    width: var(--menu-width);
-    height: calc(100vh - var(--header-height));
+    width: 220px; /* Réduction de la largeur */
+    height: auto; /* Hauteur automatique au lieu de 100vh */
+    max-height: calc(100vh - var(--header-height));
     background: var(--secondary-color);
-    padding: 2rem;
-    transition: var(--transition);
-    visibility: hidden;
+    padding: 1.5rem; /* Réduction du padding */
+    transition: all var(--transition);
     opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    z-index: 1001;
+    border-radius: 0 0 4px 0; /* Coins arrondis */
 }
 
+/* Menu Activation - Correction du sélecteur */
 #menu-checkbox:checked ~ .menu-dropdown {
     left: 0;
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
 }
 
+/* Menu list styles */
 .menu-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    margin-bottom: 1rem; /* Réduction de l'espacement */
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all var(--transition);
 }
 
 .menu-list a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1.2rem;
-    padding: 1rem 0;
-    display: block;
-    transition: var(--transition);
+    font-size: 0.95rem; /* Réduction de la taille de police */
+    font-weight: 500;
+    padding: 0.4rem; /* Réduction du padding */
+    display: block; /* Changement pour block */
+    position: relative;
+    transition: all var(--transition);
+}
+
+/* Effet de soulignement au hover */
+.menu-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width var(--transition);
 }
 
 .menu-list a:hover {
     color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.menu-list a:hover::after {
+    width: 100%;
+}
+
+/* Animation des items du menu */
+#menu-checkbox:checked ~ .menu-dropdown .menu-list li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animation décalée pour chaque item */
+.menu-list li:nth-child(1) { transition-delay: 0.2s; }
+.menu-list li:nth-child(2) { transition-delay: 0.4s; }
+.menu-list li:nth-child(3) { transition-delay: 0.6s; }
+.menu-list li:nth-child(4) { transition-delay: 0.8s; }
+
+/* Effet de flou sur le contenu principal */
+#main-container {
+    transition: all var(--transition);
+}
+
+#menu-checkbox:checked ~ #main-container {
+    filter: blur(var(--blur-strength));
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Overlay pour fermer le menu */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 998;
+    backdrop-filter: blur(var(--blur-strength));
+    -webkit-backdrop-filter: blur(var(--blur-strength));
+    cursor: pointer;
+}
+
+/* Afficher l'overlay quand le menu est ouvert */
+#menu-checkbox:checked ~ .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ajuster les z-index */
+.menu-overlay { z-index: 998; }
+.menu-dropdown { z-index: 1001; }
+#menu-btn-container { z-index: 1002; }
+
+/* Label de l'overlay pour fermer le menu */
+.menu-overlay:hover ~ #menu-btn-container #menu-checkbox {
+    opacity: 0;
+}
+
+.menu-overlay:active ~ #menu-btn-container #menu-checkbox {
+    opacity: 0;
+    checked: false;
+}
+
+/* S'assurer que le menu reste au-dessus de l'overlay */
+#menu-btn-container {
+    z-index: 1002;
+}
+
+/* Label de l'overlay pour capter les clics */
+.menu-overlay {
+    cursor: pointer;
+}
+
+/* Empêcher la propagation des clics dans le menu */
+.menu-dropdown {
+    position: relative;
+    z-index: 1001;
 }
 
 /* Logo */
@@ -157,50 +325,152 @@ header {
     transform: translate(-50%, -50%);
 }
 
-.logo {
-    height: 60px;
-    width: auto;
+.logo-link {
+    display: block;
     transition: var(--transition);
 }
 
-.logo:hover {
-    transform: scale(1.1);
+.logo-link:hover {
+    transform: scale(1.05);
+    filter: brightness(1.6); /* Ajoute 20% de luminosité */
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    display: block;
 }
 
 /* Main Content */
 main {
     margin-top: var(--header-height);
-    padding: var(--base-spacing);
+    padding: var(--spacing);
     flex: 1;
+    height: 1000px;
+}
+
+/* Overlay sombre */
+#main-container::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+    pointer-events: none;
+    z-index: 999;
+}
+
+#menu-checkbox:checked ~ #main-container::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Footer */
 footer {
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--text-color);
-    padding: var(--base-spacing);
     text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    transition: background var(--transition);
+}
+
+/* Theme Switch Styles */
+.theme-switch {
+    position: absolute;
+    right: var(--spacing);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+#theme-toggle {
+    display: none;
+}
+
+.theme-label {
+    width: 48px;
+    height: 24px;
+    background: var(--surface-color);
+    border-radius: 12px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid var(--accent-color);
+}
+
+.theme-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--transition);
+}
+
+/* Theme icon animation */
+#theme-toggle:checked + .theme-label .theme-icon {
+    transform: translateX(24px);
+}
+
+/* Icons for light/dark mode */
+.theme-icon::before {
+    content: '🌞';
+    position: absolute;
+    left: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    opacity: 1;
+    transition: var(--transition);
+}
+
+.theme-icon::after {
+    content: '🌙';
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+#theme-toggle:checked + .theme-label .theme-icon::before {
+    opacity: 0;
+}
+
+#theme-toggle:checked + .theme-label .theme-icon::after {
+    opacity: 1;
 }
 
 /* Media Queries */
 @media screen and (min-width: 768px) {
     :root {
-        --base-spacing: 2rem;
-        --header-height: 90px;
+        --header-height: 80px;
+        --spacing: 2rem;
     }
     
     .logo {
-        height: 70px;
+        height: 60px;
     }
 }
 
 @media screen and (min-width: 1024px) {
     :root {
-        --base-spacing: 2.5rem;
-        --header-height: 100px;
+        --header-height: 90px;
+        --menu-width: 250px; /* Réduction de la largeur max */
     }
     
     .logo {
-        height: 80px;
+        height: 70px;
     }
 }

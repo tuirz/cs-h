@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=width=device-width, initial-scale=1.0">
     <title>CS Habarcq | Club de Football du Pas-de-Calais</title>
 
     <!-- SEO Meta Tags -->
@@ -25,18 +25,26 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <!-- Overlay pour fermer le menu -->
+    <label class="menu-overlay" for="menu-checkbox"></label>
+    
     <header>
         <div class="container">
-            <!-- New Menu Button Structure -->
+            <!-- Theme Switch -->
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle" class="theme-label">
+                    <span class="theme-icon"></span>
+                </label>
+            </div>
+            
+            <!-- Menu Button -->
             <div id="menu-btn-container">
-                <div id="menu-btn">
-                    <input type="checkbox" id="menu-checkbox">
-                    <label for="menu-checkbox" id="menu-label">
-                        <span id="menu-bar"></span>
-                    </label>
-                </div>
-                <!-- Navigation Menu -->
-                <nav class="menu-dropdown" aria-label="Menu principal">
+                <input type="checkbox" id="menu-checkbox">
+                <label for="menu-checkbox" id="menu-label">
+                    <span id="menu-bar"></span>
+                </label>
+                <nav class="menu-dropdown">
                     <ul class="menu-list">
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#equipes">Équipes</a></li>
@@ -45,10 +53,10 @@
                     </ul>
                 </nav>
             </div>
-
+            
             <!-- Logo -->
             <div class="logo-container">
-                <a href="/" aria-label="Accueil CS Habarcq">
+                <a href="/" class="logo-link">
                     <img src="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png" 
                          alt="Logo CS Habarcq" 
                          class="logo"
@@ -59,20 +67,20 @@
         </div>
     </header>
 
-    <main>
-        <div class="container">
-            <h1>CS Habarcq</h1>
-            <section id="actualites">
-                <h2>Actualités du club</h2>
-                <!-- Content here -->
-            </section>
-        </div>
-    </main>
+    <div id="main-container">
+        <main>
+            <div class="container">
+                <h1></h1>
+                <section id="actualites">
+                    <h2></h2>
+                    <!-- Content here -->
+                </section>
+            </div>
+        </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 CS Habarcq - Tous droits réservés</p>
-        </div>
-    </footer>
+        <footer>
+            <p>&copy; 2025 C.S.Habarcq - Réalisé par Luigi SOUFAR pour SIMPLON DEV Inté P3 Lens</p>
+        </footer>
+    </div>
 </body>
 </html>
