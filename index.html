@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C.S.Habarcq | Club de Football du Pas-de-Calais</title>
 
-    <!-- SEO Meta Tags -->
+
     <meta name="description" content="Site officiel du CS Habarcq - Club de football du Pas-de-Calais. Actualités, calendrier des matchs, résultats et vie du club.">
     <meta name="keywords" content="CS Habarcq, football, Pas-de-Calais, club sportif, équipe football, matchs">
     <meta name="author" content="Luigi SOUFAR">
 
-    <!-- Open Graph Meta Tags -->
+
     <meta property="og:title" content="CS Habarcq | Club de Football">
     <meta property="og:description" content="Site officiel du CS Habarcq - Club de football du Pas-de-Calais">
     <meta property="og:image" content="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png">
     <meta property="og:type" content="website">
 
-    <!-- Styles -->
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,53 +25,47 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <!-- Video Intro -->
+
     <div class="video-intro">
-        <video id="intro-video" autoplay muted onended="this.parentElement.classList.add('ended')">
+        <video id="intro-video" autoplay muted playsinline onended="this.parentElement.classList.add('ended')">
             <source src="videos/intro.mp4" type="video/mp4">
         </video>
     </div>
 
-    <!-- Site Content -->
-    <div class="site-content hidden">
-        <header>
-            <div class="container">
-                <!-- Theme Switch -->
-                <div class="theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <label for="theme-toggle" class="theme-label">
-                        <span class="theme-icon"></span>
-                    </label>
-                </div>
-                
-                <!-- Menu Button -->
-                <div id="menu-btn-container">
-                    <input type="checkbox" id="menu-checkbox">
-                    <label for="menu-checkbox" id="menu-label">
-                        <span id="menu-bar"></span>
-                    </label>
-                    <nav class="menu-dropdown">
-                        <ul class="menu-list">
-                            <li><a href="#accueil">Accueil</a></li>
-                            <li><a href="#equipes">Équipes</a></li>
-                            <li><a href="#calendrier">Calendrier</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                
-                <!-- Logo -->
-                <div class="logo-container">
-                    <a href="/" class="logo-link">
-                        <img src="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png" 
-                             alt="Logo CS Habarcq" 
-                             class="logo"
-                             width="60"
-                             height="60">
-                    </a>
-                </div>
-            </div>
-        </header>
+        <div class="site-content hidden">
+            <header>
+                    <div class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <label for="theme-toggle" class="theme-label">
+                            <span class="theme-icon"></span>
+                        </label>
+                    </div>
+
+                     <div id="menu-btn-container">
+                        <input type="checkbox" id="menu-checkbox">
+                        <label for="menu-checkbox" id="menu-label">
+                            <span id="menu-bar"></span>
+                        </label>
+                        <nav class="menu-dropdown">
+                            <ul class="menu-list">
+                                <li><a href="#accueil">Accueil</a></li>
+                                <li><a href="#equipes">Équipes</a></li>
+                                <li><a href="#calendrier">Calendrier</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                     <div class="logo-container">
+                        <a href="/" class="logo-link">
+                            <img src="https://s2.static-footeo.com/uploads/cshabarcq/logo__76a9t22vf.png" 
+                                 alt="Logo CS Habarcq" 
+                                 class="logo"
+                                 width="60"
+                                 height="60">
+                        </a>
+                    </div>
+            </header>
 
         <div id="main-container">
             <main>
@@ -79,7 +73,35 @@
                     <h1>l</h1>
                     <section id="actualites">
                         <h2>l</h2>
-                        <!-- Content here -->
+                    </section>
+                    <section class="material-fadein">
+                        <div class="container">
+
+                            <div class="card">
+                                    <h3>Résultats du Week-end (12-13 avril 2025)</h3>
+                                    <p><strong>Seniors A :</strong> Match nul 3-3 contre Allouagne ES 5.</p>
+                                    <p><strong>Seniors B :</strong> Victoire 4-1 face à Croisilles US 2.</p>
+                                    <p><strong>Seniors C :</strong> Défaite 0-2 contre Barlin FC.</p>
+                            </div>
+                        
+                            <div class="card">
+                                    <h3>Prochain Match</h3>
+                                    <p><strong>Samedi 19 avril 2025 :</strong></p>
+                                    <p><span class="result">Seniors A</span> - <span class="result">Match à domicile contre l'équipe de Sains en Gohelle.</span></p>
+                                    <p><span class="result">Seniors B</span> - <span class="result">Déplacement à Hénin-Beaumont.</span></p>
+                            </div>
+                        
+                            <div class="card">
+                                    <h3>Communiqué Officiel</h3>
+                                    <p><strong>Réunion de rentrée :</strong> Le C.S. Habarcq organise une réunion de rentrée pour tous les membres du club.</p>
+                                    <p><strong>Date :</strong> Vendredi 18 avril 2025 à 19h00 au stade municipal.</p>
+                            </div>
+                            <div class="card">
+                                    <h3>Événements à venir</h3>
+                                    <p><strong>Tournoi de Pâques :</strong> Le club organise un tournoi de football pour les jeunes le 21 avril 2025.</p>
+                                    <p><strong>Inscriptions ouvertes :</strong> Les inscriptions sont ouvertes jusqu'au 15 avril 2025.</p>
+                            </div>
+                        </div>
                     </section>
                 </div>
             </main>
