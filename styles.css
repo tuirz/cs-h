@@ -6,11 +6,11 @@
     --secondary-color: #16A34A;       /* Vert printemps */
     --accent-color: #4ADE80;          /* Vert lime */
     --hover-color: #ffffff;
-    --background-color: #F8FAFC;      /* Gris très clair */
+    --background-color: #dadada;      /* Gris très clair */
     --surface-color: #F1F5F9;         /* Gris subtil */
     --text-color: #FFFFFF;            /* Blanc pur */
     --text-dark: #334155;             /* Gris slate */
-    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-color: rgba(0, 0, 0, 0.525);
     --blur-strength: 5px;
     --overlay-color: rgba(241, 245, 249, 0.7);
 
@@ -172,10 +172,10 @@ header {
     opacity: 1;
     transform: translateX(0);
 }
-.menu-list li:nth-child(1) { transition-delay: 0.2s; }
-.menu-list li:nth-child(2) { transition-delay: 0.4s; }
-.menu-list li:nth-child(3) { transition-delay: 0.6s; }
-.menu-list li:nth-child(4) { transition-delay: 0.8s; }
+.menu-list li:nth-child(1) { transition-delay: 0.1s; }
+.menu-list li:nth-child(2) { transition-delay: 0.25s; }
+.menu-list li:nth-child(3) { transition-delay: 0.4s; }
+.menu-list li:nth-child(4) { transition-delay: 0.55s; }
 
 .menu-list a {
     color: var(--text-color);
@@ -333,7 +333,7 @@ footer {
         --header-height: 80px;
         --spacing: 2rem;
     }
-    .logo { height: 60px; }
+    .logo { height: 40px; }
 }
 @media screen and (min-width: 1024px) {
     :root {
@@ -341,4 +341,51 @@ footer {
         --menu-width: 250px;
     }
     .logo { height: 70px; }
+}
+@media screen and (max-width: 480px) {
+    .logo {
+        height: 65px !important;
+    }
+}
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .logo {
+        height: 65px !important;
+    }
+}
+@media screen and (max-width: 600px) and (orientation: landscape) {
+    .logo {
+        height: 65px !important;
+    }
+}
+@media screen and (max-width: 744px) and (orientation: portrait) {
+    .logo {
+        height: 65px !important;
+    }
+}
+@media screen and (min-width: 744px) and (orientation: portrait) {
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    main {
+        margin-bottom: 80px;
+    }
+}
+
+/* CARD */
+.card {
+    background: var(--surface-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px var(--shadow-color);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 500px;
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+.card:hover {
+    box-shadow: 0 8px 32px var(--shadow-color);
 }
