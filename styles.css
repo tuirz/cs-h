@@ -16,7 +16,7 @@
 
     /* Layout */
     --header-height: 70px;
-    --menu-width: 220px;
+    --menu-width: 150px;
     --container-width: 1200px;
     --spacing: 1.5rem;
 
@@ -50,7 +50,7 @@
     --main-gradient: linear-gradient(120deg, #0f172a 0%, #134e4a 60%, #15803d 100%);
     --surface: #18232e;
     --text: #e8ffe8;
-    --accent: #43e97b;
+    --accent: #15803d;
     --shadow: 0 2px 16px rgba(20,40,20,0.18);
 }
 
@@ -114,6 +114,7 @@ main {
 
 /* HEADER */
 header {
+    top: 10px;
     background: var(--primary-gradient);
     height: var(--header-height);
     position: fixed;
@@ -123,7 +124,7 @@ header {
     transition: background var(--transition);
 
     /* THEME */
-    background: transparent;
+    background: var(--main-gradient);
     text-align: center;
     padding: 1.2rem 0;
     font-size: 1.5rem;
@@ -200,13 +201,13 @@ header {
     background: var(--surface);
     box-shadow: 0 4px 24px var(--shadow-color);
     border-radius: 0 0 16px 16px;
-    padding: 2rem 1.2rem 1.2rem 1.2rem;
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
     transition: left var(--transition), opacity var(--transition);
     opacity: 0;
     visibility: hidden;
     z-index: 1001;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
 }
 
@@ -424,21 +425,29 @@ body:has(#theme-toggle:checked) footer {
 @media screen and (max-width: 1024px) and (orientation: landscape) {
     .logo {
         height: 65px !important;
+        --header-height: 90px;
+
     }
 }
 @media screen and (max-width: 600px) and (orientation: landscape) {
     .logo {
         height: 65px !important;
+        --header-height: 80px;
+
     }
 }
 @media screen and (max-width: 744px) and (orientation: portrait) {
     .logo {
         height: 6px !important;
+        --header-height: 80px;
+
     }
 }
 @media screen and (max-width: 820px) and (orientation: portrait) {
     .logo {
         height: 65px !important;
+        --header-height: 80px;
+
     }
     
 }
