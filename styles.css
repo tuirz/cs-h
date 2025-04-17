@@ -238,6 +238,7 @@ header {
 .menu-list li:nth-child(2) { transition-delay: 0.25s; }
 .menu-list li:nth-child(3) { transition-delay: 0.4s; }
 .menu-list li:nth-child(4) { transition-delay: 0.55s; }
+.menu-list li:nth-child(5) { transition-delay: 0.7s; }
 
 .menu-list a {
     display: block;
@@ -251,6 +252,15 @@ header {
     letter-spacing: 0.5px;
     transition: background 0.18s, color 0.18s, filter 0.18s;
     box-shadow: none;
+}
+
+.menu-list a[href="partenaires.html"] {
+    color: #eab308;
+    font-weight: 700;
+}
+.menu-list a[href="partenaires.html"]:hover, .menu-list a[href="partenaires.html"]:focus {
+    background: #eab308;
+    color: #fff;
 }
 
 .menu-list a:hover, .menu-list a:focus {
