@@ -546,7 +546,7 @@ a:hover, button:hover {
     display: inline;
 }
 
-/* HERO IMAGE */
+/* UPFOOTER IMAGE */
 .hero-image {
     display: block;
     width: 100vw;
@@ -572,4 +572,127 @@ a:hover, button:hover {
     max-height: 500px; /* ajuste selon la taille de ton contenu */
     opacity: 1;
     transition: max-height 0.3s, opacity 0.3s;
+}
+
+/* CALENDRIER */
+.cal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(20,40,20,0.06);
+}
+.cal-table th, .cal-table td {
+    padding: 0.7em 0.5em;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+.cal-table th {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+}
+.cal-table tr:last-child td {
+    border-bottom: none;
+}
+.cal-logo {
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 0.4em;
+}
+.badge {
+    display: inline-block;
+    padding: 0.2em 0.7em;
+    border-radius: 12px;
+    font-size: 0.95em;
+    font-weight: 600;
+    margin: 0 0.1em;
+    background: #e5e7eb;
+    color: #222;
+}
+.badge-domicile { background: #bbf7d0; color: #166534; }
+.badge-exterieur { background: #dbeafe; color: #1e40af; }
+.badge-victoire { background: #dcfce7; color: #15803d; }
+.badge-nul { background: #fef9c3; color: #a16207; }
+.badge-defaite { background: #fee2e2; color: #b91c1c; }
+.cal-legend {
+    margin: 1.2rem 0 0.5rem 0;
+    text-align: center;
+}
+.cal-print-btn {
+    text-align: right;
+    margin: 1.5rem 0 0 0;
+}
+.cal-print-btn button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5em 1.2em;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.cal-print-btn button:hover {
+    background: #222;
+    color: var(--accent);
+}
+.calendrier-desktop { display: block; }
+.calendrier-mobile { display: none; }
+
+@media (max-width: 700px) {
+    .calendrier-desktop { display: none !important; }
+    .calendrier-mobile { display: block !important; }
+    .cal-mobile-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2em;
+    }
+    .cal-mobile-card {
+        background: var(--surface);
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(20,40,20,0.06);
+        padding: 1em 1.2em;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3em;
+    }
+    .cal-mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        margin-bottom: 0.2em;
+    }
+    .cal-mobile-team {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1.05em;
+    }
+    .cal-mobile-vs {
+        font-size: 0.98em;
+        color: #b55c5c;
+        margin-bottom: 0.2em;
+    }
+    .cal-mobile-result {
+        font-size: 1.1em;
+        font-weight: 700;
+        margin-top: 0.2em;
+        align-self: flex-end;
+    }
+    .cal-logo {
+        height: 28px;
+        width: 28px;
+        margin-right: 0.4em;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 }
