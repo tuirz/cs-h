@@ -134,5 +134,23 @@
             </footer>
         </div>
     </div>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      if (!themeToggle) return;
+      if (localStorage.getItem('theme') === 'dark') {
+        themeToggle.checked = true;
+      } else {
+        themeToggle.checked = false;
+      }
+      themeToggle.addEventListener('change', function() {
+        if (this.checked) {
+          localStorage.setItem('theme', 'dark');
+        } else {
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    });
+    </script>
 </body>
 </html>
