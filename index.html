@@ -136,7 +136,7 @@
     </div>
     <script>
 
-    /* Gérer les thèmes light/dark */
+    // Gérer les thèmes light/dark
     window.addEventListener('DOMContentLoaded', function() {
       const themeToggle = document.getElementById('theme-toggle');
       if (!themeToggle) return;
@@ -150,6 +150,21 @@
           localStorage.setItem('theme', 'dark');
         } else {
           localStorage.setItem('theme', 'light');
+        }
+      });
+    });
+
+    // Fermer le menu dropdown si on clique ailleurs
+    window.addEventListener('DOMContentLoaded', function() {
+      const menuCheckbox = document.getElementById('menu-checkbox');
+      const menuDropdown = document.querySelector('.menu-dropdown');
+      document.addEventListener('click', function(e) {
+        if (!menuDropdown || !menuCheckbox) return;
+        if (menuCheckbox.checked) {
+          // Si le clic n'est pas sur le menu ni sur le bouton
+          if (!menuDropdown.contains(e.target) && e.target.id !== 'menu-label' && e.target.id !== 'menu-checkbox' && !e.target.closest('#menu-label')) {
+            menuCheckbox.checked = false;
+          }
         }
       });
     });
