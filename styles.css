@@ -696,3 +696,93 @@ a:hover, button:hover {
         object-fit: cover;
     }
 }
+
+/* Tableaux Staff et Palmarès mobile */
+.staff-table-desktop, .palmares-table-desktop { display: block; }
+.staff-table-mobile, .palmares-table-mobile { display: none; }
+
+@media (max-width: 700px) {
+  .staff-table-desktop, .palmares-table-desktop { display: none !important; }
+  .staff-table-mobile, .palmares-table-mobile { display: block !important; }
+  .staff-mobile-list, .palmares-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+  }
+  .staff-mobile-card, .palmares-mobile-card {
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(20,40,20,0.06);
+    padding: 1em 1.2em;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+  .staff-mobile-equipe, .palmares-mobile-equipe {
+    font-weight: 700;
+    font-size: 1.08em;
+    margin-bottom: 0.2em;
+    color: var(--accent);
+  }
+}
+
+/* Tableaux Staff et Palmarès */
+.staff-table, .palmares-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(20,40,20,0.06);
+}
+.staff-table th, .palmares-table th,
+.staff-table td, .palmares-table td {
+  padding: 0.7em 0.5em;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+.staff-table th, .palmares-table th {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+.staff-table tr:last-child td, .palmares-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 700px) {
+  .staff-table, .palmares-table, .staff-table thead, .palmares-table thead, .staff-table tbody, .palmares-table tbody, .staff-table th, .palmares-table th, .staff-table td, .palmares-table td, .staff-table tr, .palmares-table tr {
+    display: block;
+    width: 100%;
+  }
+  .staff-table thead, .palmares-table thead {
+    display: none;
+  }
+  .staff-table tr, .palmares-table tr {
+    margin-bottom: 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px #0001;
+    background: #fff;
+    padding: 0.7em 0.5em;
+  }
+  .staff-table td, .palmares-table td {
+    text-align: left;
+    padding-left: 45%;
+    position: relative;
+    min-height: 2.2em;
+    border-bottom: none;
+    border-top: 1px solid #e5e7eb;
+  }
+  .staff-table td:before, .palmares-table td:before {
+    position: absolute;
+    left: 0.7em;
+    top: 0.7em;
+    width: 42%;
+    white-space: nowrap;
+    font-weight: 700;
+    color: #888;
+    content: attr(data-label);
+  }
+}
