@@ -30,82 +30,109 @@
         </video>
     </div>
 
-        <div class="site-content hidden">
-            <header>
-                    <div class="theme-switch">
-                        <input type="checkbox" id="theme-toggle">
-                        <label for="theme-toggle" class="theme-label">
-                            <span class="theme-icon"></span>
-                        </label>
-                    </div>
+    <div class="site-content hidden">
+        <header>
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle" class="theme-label">
+                    <span class="theme-icon"></span>
+                </label>
+            </div>
 
-                     <div id="menu-btn-container">
-                        <input type="checkbox" id="menu-checkbox">
-                        <label for="menu-checkbox" id="menu-label">
-                            <span id="menu-bar"></span>
-                        </label>
-                        <nav class="menu-dropdown">
-                            <ul class="menu-list">
-                                <li><a href="#accueil">Accueil</a></li>
-                                <li><a href="#equipes">Équipes</a></li>
-                                <li><a href="#calendrier">Calendrier</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+            <div id="menu-btn-container">
+                <input type="checkbox" id="menu-checkbox">
+                <label for="menu-checkbox" id="menu-label">
+                    <span id="menu-bar"></span>
+                </label>
+                <nav class="menu-dropdown">
+                    <ul class="menu-list">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="equipes.html">Équipes</a></li>
+                        <li><a href="calendrier.html">Calendrier</a></li>
+                        <li><a href="pef.html">Le P.E.F</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-                     <div class="logo-container">
-                        <a href="/" class="logo-link">
-                            <img src="https://kipcom.fr/wp-content/uploads/2023/02/Logo_CS_Habarcq.png"
-                                 alt="Logo CS Habarcq" 
-                                 class="logo"
-                                 width="60"
-                                 height="60">
-                        </a>
-                    </div>
-            </header>
-
+            <div class="logo-container">
+                <a href="/" class="logo-link">
+                    <img src="https://kipcom.fr/wp-content/uploads/2023/02/Logo_CS_Habarcq.png"
+                         alt="Logo CS Habarcq" 
+                         class="logo"
+                         width="60"
+                         height="60">
+                </a>
+            </div>
+        </header>
+        
         <div id="main-container">
             <main>
                 <div class="container">
-                    <h1>l</h1>
-                    <section id="actualites">
-                        <h2>l</h2>
+                            <h2>Actualités</h2>
+                            <p>Retrouvez toutes les dernières nouvelles du club, les résultats des matchs et les événements à venir.</p>
+                        </div>
                     </section>
                     <section class="material-fadein">
                         <div class="container">
-
                             <div class="card">
-                                    <h3>Résultats du Week-end (12-13 avril 2025)</h3>
+                                <h3>Résultats du Week-end (12-13 avril 2025)</h3>
+                                <input type="checkbox" id="toggle-card-1" class="toggle-card">
+                                <label for="toggle-card-1" class="btn-card">
+                                    <span class="voir-plus">Voir plus</span>
+                                    <span class="voir-moins">Voir moins</span>
+                                </label>
+                                <div class="card-content">
                                     <p><strong>Seniors A :</strong> Match nul 3-3 contre Allouagne ES 5.</p>
                                     <p><strong>Seniors B :</strong> Victoire 4-1 face à Croisilles US 2.</p>
                                     <p><strong>Seniors C :</strong> Défaite 0-2 contre Barlin FC.</p>
+                                </div>
                             </div>
-                        
                             <div class="card">
-                                    <h3>Prochain Match</h3>
+                                <h3>Prochain Match</h3>
+                                <input type="checkbox" id="toggle-card-2" class="toggle-card">
+                                <label for="toggle-card-2" class="btn-card">
+                                    <span class="voir-plus">Voir plus</span>
+                                    <span class="voir-moins">Voir moins</span>
+                                </label>
+                                <div class="card-content">
                                     <p><strong>Samedi 19 avril 2025 :</strong></p>
                                     <p><span class="result">Seniors A</span> - <span class="result">Match à domicile contre l'équipe de Sains en Gohelle.</span></p>
                                     <p><span class="result">Seniors B</span> - <span class="result">Déplacement à Hénin-Beaumont.</span></p>
+                                </div>
                             </div>
-                        
                             <div class="card">
-                                    <h3>Communiqué Officiel</h3>
+                                <h3>Communiqué Officiel</h3>
+                                <input type="checkbox" id="toggle-card-3" class="toggle-card">
+                                <label for="toggle-card-3" class="btn-card">
+                                    <span class="voir-plus">Voir plus</span>
+                                    <span class="voir-moins">Voir moins</span>
+                                </label>
+                                <div class="card-content">
                                     <p><strong>Réunion de rentrée :</strong> Le C.S. Habarcq organise une réunion de rentrée pour tous les membres du club.</p>
                                     <p><strong>Date :</strong> Vendredi 18 avril 2025 à 19h00 au stade municipal.</p>
+                                </div>
                             </div>
                             <div class="card">
-                                    <h3>Événements à venir</h3>
+                                <h3>Événements à venir</h3>
+                                <input type="checkbox" id="toggle-card-4" class="toggle-card">
+                                <label for="toggle-card-4" class="btn-card">
+                                    <span class="voir-plus">Voir plus</span>
+                                    <span class="voir-moins">Voir moins</span>
+                                </label>
+                                <div class="card-content">
                                     <p><strong>Tournoi de Pâques :</strong> Le club organise un tournoi de football pour les jeunes le 21 avril 2025.</p>
                                     <p><strong>Inscriptions ouvertes :</strong> Les inscriptions sont ouvertes jusqu'au 15 avril 2025.</p>
+                                </div>
                             </div>
                         </div>
                     </section>
                 </div>
             </main>
 
+            <img src="https://s1.static-footeo.com/uploads/cshabarcq/themes/default/images/banner__sm9x8m.jpg" alt="CS Habarcq" class="hero-image">
+
             <footer>
-                <p>&copy; 2025 C.S.Habarcq - Réalisé par Luigi SOUFAR pour SIMPLON DEV Inté P3 Lens</p>
+                <p>&copy; 2025 C.S.Habarcq - Réalisé par<a title=Linkedin href=https://fr.linkedin.com/in/luigi-soufar-15033b16a>Luigi SOUFAR</a>pour SIMPLON DEV Inté P3 Lens</p>
             </footer>
         </div>
     </div>
